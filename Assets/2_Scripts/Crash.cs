@@ -3,33 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class Crash : MonoBehaviour
 {
-    private GameObject crashEffectObj;
-    private ParticleSystem crashEffect;
-
-    private void Awake()
-    {
-        // 자식에서 "CrashEffect" 오브젝트와 ParticleSystem 찾기
-        crashEffectObj = transform.Find("CrashEffect")?.gameObject;
-        if (crashEffectObj != null)
-        {
-            crashEffect = crashEffectObj.GetComponent<ParticleSystem>();
-            crashEffectObj.SetActive(false); // 시작 시 비활성화
-        }
-    }
-
+    [Header("Inspector에서 할당")]
+    public ParticleSystem crashEffect; // Inspector에서 직접 할당
     [SerializeField]
     private float reloadDelay = 2f;
+    [SerializeField] private AudioClip crashSound; // 충돌 사운드 클립
+
+    private AudioSource audioSource;
+    private PlayerController playerController; // PlayerController 스크립트 참조
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        playerController = GetComponent<PlayerController>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ground"))
         {
-            if (crashEffectObj != null && crashEffect != null)
-            {
-                crashEffectObj.SetActive(true); // 오브젝트 활성화
-                crashEffect.Play();             // 이펙트 재생
-            }
 
+            audioSource.PlayOneShot(crashSound); // 충돌 사운드 재생
+            crashEffect.Play();                     // 이펙트 재생
+            playerController.GameOver();
             Debug.Log("오 내머리야");
             Invoke(nameof(ReloadScene), reloadDelay);
         }

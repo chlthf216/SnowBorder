@@ -3,30 +3,33 @@ using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
-    private GameObject finalEffectObj;
-    private ParticleSystem finalEffect;
+    [Header("Inspector에서 할당")]
+    public ParticleSystem finalEffect; // Inspector에서 직접 할당
+
+    private AudioSource audioSource;
+    private bool isFinished = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        
+        
+    }
 
     private void Awake()
     {
-        // 자식에서 "FinalEffect" 오브젝트와 ParticleSystem 찾기
-        finalEffectObj = transform.Find("FinalEffect")?.gameObject;
-        if (finalEffectObj != null)
-        {
-            finalEffect = finalEffectObj.GetComponent<ParticleSystem>();
-            finalEffectObj.SetActive(false); // 시작 시 비활성화
-        }
+        //if (finalEffect != null)
+            //finalEffect.gameObject.SetActive(false); // 시작 시 비활성화
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isFinished)
         {
-            if (finalEffectObj != null && finalEffect != null)
-            {
-                finalEffectObj.SetActive(true); // 오브젝트 활성화
-                finalEffect.Play();             // 이펙트 재생
-            }
-
+            
+            isFinished = true; // 완료 상태로 설정
+            finalEffect.Play();
+            audioSource.Play(); // 오디오 재생
             Debug.Log("완주 했습니다");
             Invoke(nameof(ReloadScene), 2f);
         }

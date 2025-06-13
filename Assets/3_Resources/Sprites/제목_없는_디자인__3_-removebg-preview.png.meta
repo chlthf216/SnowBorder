@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: ffa7d4a2d8a411d48bd42525265329f8
+guid: 4ba6a60a7bd303c4d856b6381d4a4eb4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8814811844871620323
+    second: "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_0"
+  - first:
+      213: 4390938496816619267
+    second: "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,14 +71,14 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +114,51 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 462
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d197588745f7ba580800000000000000
+      internalID: -8814811844871620323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_1"
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 220
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f97557c4fbfec30800000000000000
+      internalID: 4390938496816619267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -122,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_0": -8814811844871620323
+      "\uC81C\uBAA9_\uC5C6\uB294_\uB514\uC790\uC778__3_-removebg-preview_1": 4390938496816619267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
